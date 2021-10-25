@@ -1,5 +1,5 @@
 //
-// Created by 15255 on 5/30/2021.
+// Created by Eyu on 10/9/2021.
 //
 
 #ifndef COURSE_H
@@ -47,7 +47,7 @@ public:
            std::string college,
            std::string instructor,
            std::string email
-           ) {
+    ) {
         this->rowId = rowId;
         this->CRN = CRN;
         this->maxEnrollment = maxEnrollment;
@@ -152,7 +152,8 @@ public:
     }
 
     /**
-     * Overload < operator for obje ct comparison
+     * Note. In tree section, we compare by rowId
+     * Overload < operator for object comparison
      */
     friend bool operator < (const Course& lhs, const Course& rhs) {
         return lhs.getRowId() < rhs.getRowId();
@@ -388,7 +389,7 @@ void CourseTest() {
 
     // Test initialization (and getters)
     Course testObject2 = Course(3, 96196, 20, 0, "ABIO", "Doctoral Dissertation Research",
-                                 "CALS", "Harvey, Jean Ruth", "Jean.Harvey@uvm.edu");
+                                "CALS", "Harvey, Jean Ruth", "Jean.Harvey@uvm.edu");
     assert (testObject2.getRowId() == 3);
     assert (testObject2.getCRN() == 96196);
     assert (testObject2.getMaxEnrollment() == 20);
